@@ -9,7 +9,7 @@ then
    sudo apt-get -y install git vim
 elif [ -f /usr/bin/pacman ]
 then
-   sudo apt-get -y install git vim
+   sudo pacman -S --noconfirm git vim
 else
    echo "Err: package management system not supported."
 fi
