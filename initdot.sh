@@ -39,6 +39,7 @@ git clone https://github.com/preservim/nerdtree.git ~/.vim/bundle/nerdtree > /de
 git clone https://github.com/preservim/nerdcommenter.git ~/.vim/bundle/nerdcommenter > /dev/null 2>&1
 git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline > /dev/null 2>&1
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes > /dev/null 2>&1
+git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic > /dev/null 2>&1
 cp -r vim/colors ~/.vim/
 
 # Setup Pythonrc
