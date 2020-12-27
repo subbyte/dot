@@ -3,13 +3,13 @@
 # prepare compilation environment
 if [ -f /usr/bin/yum ]
 then
-   sudo yum -y install git vim-enhanced
+   sudo yum -y install git vim-enhanced curl
 elif [ -f /usr/bin/apt-get ]
 then
-   sudo apt-get -y install git vim
+   sudo apt-get -y install git vim curl
 elif [ -f /usr/bin/pacman ]
 then
-   sudo pacman -S --noconfirm git vim
+   sudo pacman -S --noconfirm git vim curl
 else
    echo "Err: package management system not supported."
 fi
