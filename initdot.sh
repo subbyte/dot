@@ -41,6 +41,7 @@ git clone https://github.com/vim-airline/vim-airline ~/.vim/bundle/vim-airline >
 git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/bundle/vim-airline-themes > /dev/null 2>&1
 git clone https://github.com/vim-syntastic/syntastic.git ~/.vim/bundle/syntastic > /dev/null 2>&1
 cp -r vim/colors ~/.vim/
+cp vim/vimrc ~/.vimrc
 
 # Setup Pythonrc
 echo "4. setup pythonrc"
