@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 if [ -f /usr/bin/vim -a -f /usr/bin/git ]
 then
