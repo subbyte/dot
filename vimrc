@@ -1,3 +1,7 @@
+" need this for vim 8
+" optional for vim 9
+packadd! onedark.vim
+
 " vim not vi compatible
 set nocompatible
 
