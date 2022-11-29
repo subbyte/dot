@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 if [ -f /usr/bin/vim -a -f /usr/bin/git ]
 then
@@ -33,12 +33,12 @@ echo "2. setup vim"
 rm -f ~/.vimrc
 rm -rf ~/.vim
 mkdir -p ~/.vim/pack/plugins/start
-pushd ~/.vim/pack/plugins/start
+cd ~/.vim/pack/plugins/start
 git clone https://github.com/preservim/nerdtree.git
 git clone https://github.com/vim-airline/vim-airline.git
 git clone https://github.com/vim-airline/vim-airline-themes.git
 git clone https://github.com/joshdick/onedark.vim.git
-popd
+cd $TMP_DIR
 cp vimrc ~/.vimrc
 
 # Setup Pythonrc
