@@ -20,8 +20,8 @@ fi
 TMP_DIR=$(mktemp -d)
 cd $TMP_DIR
 
-git clone https://github.com/subbyte/dotstarter.git
-cd dotstarter
+git clone https://github.com/subbyte/dot.git
+cd dot
 
 # Setup bash
 echo "1. setup bash"
@@ -44,7 +44,7 @@ mkdir opt
 cd opt
 git clone https://github.com/joshdick/onedark.vim.git
 
-cd $TMP_DIR/dotstarter
+cd $TMP_DIR/dot
 cp vimrc ~/.vimrc
 
 # Setup Pythonrc

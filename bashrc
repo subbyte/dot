@@ -78,9 +78,9 @@ set_prompt()
     local txtreset="$(tput sgr0)"
     local txtbold="$(tput bold)"
     local txtgrey="$(tput setaf 241)"
-    local txtgreen="$(tput setaf 113)"
+    local txtgreen="$(tput setaf 118)"
     local txtmagenta="$(tput setaf 206)"
-    local txtblue="$(tput setaf 26)"
+    local txtblue="$(tput setaf 33)"
     local tolastline="$(tput cup $LINES)"
     
     PS1="\[$tolastline\]\n\[$txtgrey\][\D{%z %H:%M:%S}\[$txtgrey\]]"
