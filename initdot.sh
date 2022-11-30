@@ -24,9 +24,11 @@ git clone https://github.com/subbyte/dot.git
 cd dot
 
 # Setup bash
-echo "1. setup bash"
+echo "1. setup bash/zsh"
 rm -f ~/.bashrc
 cp bashrc ~/.bashrc
+rm -f ~/.zshrc
+cp zshrc ~/.zshrc
 
 # Setup vim
 echo "2. setup vim"
