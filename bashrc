@@ -15,6 +15,11 @@ alias vi='vim'
 alias ll='ls -alF'
 alias la='ls -A'
 
+# more aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

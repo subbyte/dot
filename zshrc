@@ -11,7 +11,15 @@ export HISTFILE=~/.zsh_history
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
-# alias definitions
+# built-in aliases
+alias ls='ls -G'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+
+# more aliases
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
