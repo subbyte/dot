@@ -9,6 +9,9 @@ packadd! nerdtree
 " vim not vi compatible
 set nocompatible
 
+" extend from default 20
+set history=1000
+
 " auto reload when file changed outside
 set autoread
 
