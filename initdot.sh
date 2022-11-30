@@ -34,16 +34,11 @@ cp zshrc ~/.zshrc
 echo "2. setup vim"
 rm -f ~/.vimrc
 rm -rf ~/.vim
-mkdir -p ~/.vim/pack/plugins/start
-cd ~/.vim/pack/plugins/start
+mkdir -p ~/.vim/pack/plugins/opt
+cd ~/.vim/pack/plugins/opt
 git clone https://github.com/preservim/nerdtree.git
 git clone https://github.com/vim-airline/vim-airline.git
 git clone https://github.com/vim-airline/vim-airline-themes.git
-
-# onedark installation requires the directory opt
-cd ../
-mkdir opt
-cd opt
 git clone https://github.com/joshdick/onedark.vim.git
 
 cd $TMP_DIR/dot

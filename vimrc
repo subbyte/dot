@@ -1,6 +1,10 @@
-" need this for vim 8
-" optional for vim 9
+" put all plugins in the opt directory:
+" 1. onedark need this for vim >= 8 < 9
+" 2. vim-airline need this for gvim
 packadd! onedark.vim
+packadd! vim-airline
+packadd! vim-airline-themes
+packadd! nerdtree
 
 " vim not vi compatible
 set nocompatible
@@ -67,6 +71,17 @@ set linebreak
 
 
 set number
+set encoding=utf8
+
+
+
+if has("gui_running")
+    set guioptions-=m
+    set guioptions-=T
+    set guioptions-=r
+    set guioptions-=L
+    set gfn=Monospace\ 12
+endif
 
 
 
