@@ -20,6 +20,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# git completion
+source /usr/share/bash-completion/completions/git
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
