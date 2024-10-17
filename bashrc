@@ -82,11 +82,7 @@ parse_python_venv()
 
 parse_screen_session()
 {
-    if [ ! -z $STY ]; then
-        screenpid=$(echo $STY | awk -F"." '{ print $1}')
-        screenname=$(ls /var/run/screen/S-$USER/$screenpid* | awk -F"." '{print $2}')
-        echo " [$screenname]"
-    fi
+    if [ ! -z $STY ]; then echo " [$(echo $STY | awk -F"." '{ print $2}')]"; fi
 }
 
 # Interactive prompt
