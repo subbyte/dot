@@ -80,6 +80,15 @@ parse_python_venv()
     if [ ! -z ${VIRTUAL_ENV} ]; then echo " ($(basename $VIRTUAL_ENV))"; fi
 }
 
+parse_screen_session()
+{
+    if [ ! -z $STY ]; then
+        screenpid=$(echo $STY | awk -F"." '{ print $1}')
+        screenname=$(ls /var/run/screen/S-$USER/$screenpid* | awk -F"." '{print $2}')
+        echo " [$screenname]"
+    fi
+}
+
 # Interactive prompt
 set_prompt()
 {
@@ -93,6 +102,7 @@ set_prompt()
     
     PS1="\[$tolastline\]\n\[$txtgrey\][\D{%z %H:%M:%S}\[$txtgrey\]]"
     PS1+=" \u@\[$txtgreen\]\h\[$txtgrey\]:\w"
+    PS1+="\[$txtgreen\]$(parse_screen_session)"
     PS1+="\[$txtblue\]$(parse_git_branch)"
     PS1+="\[$txtmagenta\]$(parse_python_venv)"
     PS1+="\[$txtreset\]"
