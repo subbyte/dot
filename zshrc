@@ -24,6 +24,11 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # git info and auto-complete support
 autoload -Uz vcs_info
 autoload -Uz compinit
@@ -33,12 +38,13 @@ zstyle ':vcs_info:git:*' formats ' {%b}'
 precmd() {
     vcs_info
     compinit
-    psvar[1]=$vcs_info_msg_0_
-    if [ ! -z ${VIRTUAL_ENV} ]; then psvar[2]=" ($(basename $VIRTUAL_ENV))"; fi
+    if [ ! -z $STY ]; then psvar[1]=" [$(echo $STY | awk -F"." '{ print $2}')]"; else psvar[1]=""; fi
+    if [ ! -z ${VIRTUAL_ENV} ]; then psvar[2]=" ($(basename $VIRTUAL_ENV))"; else psvar[2]=""; fi
+    psvar[3]=$vcs_info_msg_0_
 }
 
 printf '\n%.0s' {1..100}
 
 PROMPT='
-%F{241}%n@%F{113}%m:%F{241}%~%F{033}%1v%F{206}%2v%f
+%F{241}%n@%F{113}%m:%F{241}%~%F{113}%1v%F{206}%2v%F{033}%3v%f
 %# '
