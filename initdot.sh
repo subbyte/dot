@@ -3,9 +3,9 @@
 if [ -f /usr/bin/vim -a -f /usr/bin/git ]
 then
     echo "Info: vim and git found."
-elif [ -f /usr/bin/yum ]
+elif [ -f /usr/bin/dnf ]
 then
-   sudo yum -y install git vim-enhanced
+   sudo dnf -y install git vim-enhanced
 elif [ -f /usr/bin/apt-get ]
 then
    sudo apt-get -y install git vim
