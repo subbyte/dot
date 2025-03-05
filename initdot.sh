@@ -25,19 +25,15 @@ cd dot
 
 # Setup bash
 echo "1. setup bash/zsh/ksh"
-rm -f ~/.bashrc
 cp bashrc ~/.bashrc
-rm -f ~/.zshrc
 cp zshrc ~/.zshrc
-rm -f ~/.kshrc
 cp kshrc ~/.kshrc
 
 # Setup vim
 echo "2. setup vim"
-rm -f ~/.vimrc
 rm -rf ~/.vim
 mkdir -p ~/.vim/pack/plugins/opt
-cd ~/.vim/pack/plugins/opt
+cd ~/.vim/pack/plugins/opt/
 git clone https://github.com/preservim/nerdtree.git
 git clone https://github.com/vim-airline/vim-airline.git
 git clone https://github.com/vim-airline/vim-airline-themes.git
@@ -49,5 +45,9 @@ cp vimrc ~/.vimrc
 # Setup Pythonrc
 echo "3. setup pythonrc"
 cp pythonrc ~/.pythonrc
+
+# Setup screen
+echo "4. setup screenrc"
+cp screenrc ~/.screenrc
 
 echo "#### Mission Accomplished ####"
