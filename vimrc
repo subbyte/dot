@@ -77,6 +77,8 @@ set number
 set encoding=utf8
 
 
+set mouse=nicr
+
 
 if has("gui_running")
     set guioptions-=m
@@ -84,7 +86,7 @@ if has("gui_running")
     set guioptions-=r
     set guioptions-=L
     set gfn=Monospace\ 12
-    autocmd VimEnter * NERDTree
+    autocmd VimEnter * NERDTree | wincmd p
 endif
 
 
