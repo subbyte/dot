@@ -47,7 +47,8 @@ echo "3. setup pythonrc"
 cp pythonrc ~/.pythonrc
 
 # Setup screen
-echo "4. setup screenrc"
+echo "4. setup screenrc/tmux"
 cp screenrc ~/.screenrc
+cp tmux.conf ~/.tmux.conf
 
 echo "#### Mission Accomplished ####"
