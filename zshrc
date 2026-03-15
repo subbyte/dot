@@ -29,15 +29,17 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# auto complete
+autoload -Uz compinit
+compinit
+
 # git info and auto-complete support
 autoload -Uz vcs_info
-autoload -Uz compinit
 zstyle ':vcs_info:git:*' formats ' {%b}'
 
 # execute vcs_info before PROMPT eval
 precmd() {
     vcs_info
-    compinit
     if [ ! -z $STY ]; then psvar[1]=" [$(echo $STY | awk -F"." '{ print $2}')]"; else psvar[1]=""; fi
     if [ ! -z ${VIRTUAL_ENV} ]; then psvar[2]=" ($(basename $VIRTUAL_ENV))"; else psvar[2]=""; fi
     psvar[3]=$vcs_info_msg_0_
