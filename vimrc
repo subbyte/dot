@@ -77,7 +77,7 @@ set number
 set encoding=utf8
 
 
-set mouse=nicr
+set mouse-=a
 
 
 if has("gui_running")
