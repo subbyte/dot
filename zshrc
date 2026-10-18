@@ -39,9 +39,9 @@ precmd() {
     if [ ! -z $STY ]; then psvar[1]=" [$(echo $STY | awk -F"." '{ print $2}')]"; else psvar[1]=""; fi
     if [ ! -z ${VIRTUAL_ENV} ]; then psvar[2]=" ($(basename $VIRTUAL_ENV))"; else psvar[2]=""; fi
     psvar[3]=$vcs_info_msg_0_
+    # pin the prompt to the last line of the terminal
+    print -n -- "$(tput cup $LINES)"
 }
-
-printf '\n%.0s' {1..100}
 
 PROMPT='
 %F{241}[%D{%z %H:%M:%S}] %n@%F{113}%m:%F{241}%~%F{113}%1v%F{206}%2v%F{033}%3v%f
