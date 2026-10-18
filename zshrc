@@ -4,12 +4,13 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 # vi mode
 bindkey -v
 
-# enable 100 lines of history
-export HISTFILESIZE=100
-export HISTSIZE=100
+# history
+export HISTFILESIZE=20000
+export HISTSIZE=10000
 export HISTFILE=~/.zsh_history
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
 
 # built-in aliases
 alias ls='ls -G'
@@ -23,11 +24,6 @@ alias la='ls -A'
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
-
-# pyenv setup
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 # auto complete
 autoload -Uz compinit
@@ -48,5 +44,5 @@ precmd() {
 printf '\n%.0s' {1..100}
 
 PROMPT='
-%F{241}%n@%F{113}%m:%F{241}%~%F{113}%1v%F{206}%2v%F{033}%3v%f
+%F{241}[%D{%z %H:%M:%S}] %n@%F{113}%m:%F{241}%~%F{113}%1v%F{206}%2v%F{033}%3v%f
 %# '
