@@ -1,4 +1,4 @@
-# Remote Host Dot File Setup
+# Linux/Mac Environment Setup
 
 ## Use
 
