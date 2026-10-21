@@ -36,7 +36,11 @@ zstyle ':vcs_info:git:*' formats ' {%b}'
 # execute vcs_info before PROMPT eval
 precmd() {
     vcs_info
-    if [ ! -z $STY ]; then psvar[1]=" [$(echo $STY | awk -F"." '{ print $2}')]"; else psvar[1]=""; fi
+    local screen tmux names
+    if [ ! -z $STY ]; then screen=$(echo $STY | awk -F"." '{ print $2 }'); fi
+    if [ ! -z $TMUX ]; then tmux=$(tmux display-message -p '#S' 2> /dev/null); fi
+    names=$(echo $screen $tmux)
+    if [ ! -z "$names" ]; then psvar[1]=" [$names]"; else psvar[1]=""; fi
     if [ ! -z ${VIRTUAL_ENV} ]; then psvar[2]=" ($(basename $VIRTUAL_ENV))"; else psvar[2]=""; fi
     psvar[3]=$vcs_info_msg_0_
     # pin the prompt to the last line of the terminal

@@ -82,7 +82,20 @@ parse_python_venv()
 
 parse_screen_session()
 {
-    if [ ! -z $STY ]; then echo " [$(echo $STY | awk -F"." '{ print $2}')]"; fi
+    if [ ! -z $STY ]; then echo "$STY" | awk -F"." '{ print $2 }'; fi
+}
+
+parse_tmux_session()
+{
+    if [ ! -z $TMUX ]; then tmux display-message -p '#S' 2> /dev/null; fi
+}
+
+parse_multiplexer_session()
+{
+    local screen=$(parse_screen_session)
+    local tmux=$(parse_tmux_session)
+    local names=$(echo $screen $tmux)
+    if [ ! -z "$names" ]; then echo " [$names]"; fi
 }
 
 # Interactive prompt
@@ -98,7 +111,7 @@ set_prompt()
     
     PS1="\[$tolastline\]\n\[$txtgrey\][\D{%z %H:%M:%S}\[$txtgrey\]]"
     PS1+=" \u@\[$txtgreen\]\h\[$txtgrey\]:\w"
-    PS1+="\[$txtgreen\]$(parse_screen_session)"
+    PS1+="\[$txtgreen\]$(parse_multiplexer_session)"
     PS1+="\[$txtblue\]$(parse_git_branch)"
     PS1+="\[$txtmagenta\]$(parse_python_venv)"
     PS1+="\[$txtreset\]"
